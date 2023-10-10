@@ -1,0 +1,19 @@
+parameters:
+  azureSubscription: ''
+  functionAppName: ''
+  FUNCTIONS_WORKER_RUNTIME: ''
+  tenantId: ''
+  apiClientId: ''
+  apiClientSecret: ''
+
+steps:
+- task: AzureFunctionApp@1
+  displayName: 'Deploy Azure Function App'
+  inputs:
+    azureSubscription: ${{ parameters.azureSubscription }}
+    functionAppName: ${{ parameters.functionAppName }}
+    FUNCTIONS_WORKER_RUNTIME: ${{ parameters.FUNCTIONS_WORKER_RUNTIME }}
+    tenantId: ${{ parameters.tenantId }}
+    apiClientId: ${{ parameters.apiClientId }}
+    apiClientSecret: ${{ parameters.apiClientSecret }}
+    
